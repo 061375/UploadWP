@@ -10,7 +10,8 @@ Compresses and uploads the cached version of a Wordpress website
                       
 WP Minifier and Uploader
 Gets the cached HTML version of a Wordpress website produced by a Wordpress cache plugin and minifies it and uploads it to a web server.
-The result is what looks like a Wordpress website that is totally HTML and very light weight. Perfect for a webite this is essentially just a blog and doesn't need constant updates.
+The result is what looks like a Wordpress website that is totally HTML and very light weight. It's perfect for a blog or vanity sight that's not regularly updated. 
+
 It's affectively hack-proof ... as long as your server doesn't get hacked
 
 Really it's kind of like combining Wordpress and Dreamweaver. It was an idea I had years ago but only recently decided it would be a fun project to build.
