@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8" />
+    </startup>
+	<appSettings>
+		<add key="PersistData" value="persistdata.json" />
+		<add key="WPFolder" value="C:\path\to\wordpress\" />
+		<add key="WPCacheFolder" value="C:\path\to\wordpress\wp-content\cache\supercache\localhost" />
+		<add key="RootLocalURL" value="http://localhost:8000" />
+		<add key="FtpServer" value="ftp.yourwebsite.com" />
+		<add key="FtpServerUserName" value="FTPUSER" />
+		<add key="FtpServerPassword" value="FTPPASS" />
+		<add key="FtpUploadPath" value="/home/ftp/remote/path/" />
+		<add key="SFTPServer" value="" />
+		<add key="SFTPServerUserName" value="" />
+		<add key="SFTPServerPassword" value="" />
+		<add key="SFTPUploadPath" value="" />
+		<add key="SFTPport" value="22" />
+		
+		<add key="EmailFrom" value="no-reply@yourwebsite.com" />
+		<add key="SMTP" value="smtp.yoursmtp.com" />
+		<add key="EmailCredentialsUser" value="no-reply@yourwebsite.com" />
+		<add key="EmailCredentialsPass" value="emailpassword" />
+		<add key="SMTPPort" value="" />
+		<add key="ErrorEmailSubject" value="helpers message" />
+		<add key="ErrorEmails" value="user@youremail.com" />
+		<add key="ConsoleLog" value="true" />
+	</appSettings>
+</configuration>
