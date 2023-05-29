@@ -22,15 +22,8 @@ namespace UploadWP
          *        It's affectively hack-proof ... as long as your server doesn't get hacked
          * @author Jeremy Heminger <contact@jeremyheminger.com>
          * @date May 3, 2023
-         * @last_update May 25, 2023
+         * @last_update May 29, 2023
          * 
-         * @bug     still collecting php files and probably other unwanted extensions
-         *          - looks like this is fixed but needs more testing
-         * @bug     seems to be skipping files occasionally 
-         * @todo    program needs to dig through stylesheets to find assets and ( maybe ) javascript - DONE CSS
-         * @todo    connect to WP DB ( might be useful )
-         * @todo    detect theme change
-         * @todo    scan for uploaded orphaned files
          * 
          * @dependency AQFiles 
          * @dependency AQHelpers 
@@ -38,13 +31,6 @@ namespace UploadWP
          * @dependency Newtonsoft.JSON
          * @dependency Renci.SSHNet
          * 
-         * @version 1.0.0.3
-         *  @feature digs through stylsheets to find assets
-         * @version 1.0.0.2
-         *  @bugfix unwanted file types no longer uploaded
-         * @version 1.0.0.1
-         *  @feature delete removed pages
-         * @version 1.0.0.0
          * 
          * 
          * */
@@ -223,6 +209,12 @@ namespace UploadWP
                     }
                     Console.WriteLine("______________________________");
                 } // end Public.PersistData.files loop
+
+                // if tru then check for and remove orphaned files
+                if(Constants.ScanForOrphaned)
+                {
+                    PurgeOrphaned _p = new PurgeOrphaned();
+                }    
 
                 Helpers.SetLastRan(Constants.PersistData, Public.PersistData);
 

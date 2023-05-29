@@ -1,4 +1,5 @@
 
+
 # UploadWP
 Compresses and uploads the cached version of a Wordpress website
 
@@ -25,6 +26,8 @@ last update May 25, 2023
  - bug     still collecting php files and probably other unwanted extensions
  
    - looks like this is fixed but needs more testing
+
+   - turns out it was gathering CSS references
           
  - bug     seems to be skipping files occasionally 
  
@@ -47,20 +50,23 @@ last update May 25, 2023
  
  dependency Renci.SSHNet
  
+ - version 1.0.0.4
+
+    - **feature** clear orphaned files
+    -  **bugfix** css url(#) references were being added as uploadable files
+    - **feature** JSON files now formatted as indented
  
  - version 1.0.0.3
  
-	  - feature digs through stylsheets to find assets
+    - **feature** digs through stylsheets to find assets
   
  - version 1.0.0.2
  
-	  - bugfix unwanted file types no longer uploaded
+    - **bugfix** unwanted file types no longer uploaded
   
  - version 1.0.0.1
  
-	  - feature delete removed pages
+    - **feature** delete removed pages
   
  - version 1.0.0.0
- 
- 
  

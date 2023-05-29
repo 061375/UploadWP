@@ -31,5 +31,8 @@ namespace UploadWP
         public static readonly string ErrorEmailSubject = ConfigurationManager.AppSettings.Get("ErrorEmailSubject");
         public static readonly string ErrorEmails = ConfigurationManager.AppSettings.Get("ErrorEmails");
         public static readonly bool ConsoleLog = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("ConsoleLog"));
+
+        public static readonly bool ScanForOrphaned = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("ScanForOrphaned"));
+        public static readonly string ScanForOrphanedTime = ConfigurationManager.AppSettings.Get("ScanForOrphanedTime");
     }
 }

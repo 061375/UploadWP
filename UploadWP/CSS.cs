@@ -12,6 +12,13 @@ namespace UploadWP
     sealed class CSS
     {
         private List<string> data;
+        private List<string> discard = new List<string>()
+        {
+            ".php",
+            ".xml",
+            ".txt",
+            "#"
+        };
         /// <summary>
         /// 
         /// </summary>
@@ -38,6 +45,7 @@ namespace UploadWP
         /// <returns></returns>
         public List<string> GetFiles(string sheet, string pattern)
         {
+            bool skip = false;
             // Create a regular expression object
             Regex regex = new Regex(pattern);
             // Find all matches in the stylesheet
@@ -46,10 +54,19 @@ namespace UploadWP
             // Iterate over the matches
             foreach (Match match in matches)
             {
+                skip = false;
                 string src = match.Groups["url"].Value;
                 // discard SVG and Base64, etc ...
                 if (src.IndexOf("data:image") > -1)
                     continue;
+                // discard unwanted files
+                foreach (string d in this.discard)
+                    if (src.IndexOf(d) > -1)
+                        skip = true;
+                if (skip)
+                {
+                    continue;
+                }
                 // if we have seen this image previously
                 if (Public.PersistData.files.ContainsKey(src))
                 {

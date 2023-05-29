@@ -220,6 +220,27 @@ namespace UploadWP
             }
             return true;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="remotePath"></param>
+        /// <returns></returns>
+        public List<string> GetRemoteFilePaths(string remotePath)
+        {
+            List<string> _return = new List<string>();
+            using (Session session = new Session())
+            {
+                
+                // Connect
+                session.Open(sessionOptions);
+                IEnumerable<RemoteFileInfo> _files = session.EnumerateRemoteFiles(remotePath, null, EnumerationOptions.AllDirectories);
+                foreach(RemoteFileInfo _file in _files)
+                {
+                    _return.Add(_file.FullName);
+                }
+            }
+            return _return;
+        }
         private static void SessionFileTransferProgress(
         object sender, FileTransferProgressEventArgs e)
         {
