@@ -56,11 +56,11 @@ namespace UploadWP
                 if (p_data_string.Trim().Length == 0 || p_data_string == null)
                 {
                     PersistData tmp = new PersistData();
-                    p_data_string = JsonConvert.SerializeObject(tmp);
+                    p_data_string = JsonConvert.SerializeObject(tmp, Formatting.Indented);
                 }
             } else {
                 PersistData tmp = new PersistData();
-                p_data_string = JsonConvert.SerializeObject(tmp);
+                p_data_string = JsonConvert.SerializeObject(tmp, Formatting.Indented);
             }
             return JsonConvert.DeserializeObject<PersistData>(p_data_string);
         }
@@ -77,7 +77,7 @@ namespace UploadWP
         public static void SetLastRan(string file, PersistData data)
         {
             data.last_run = DateTime.Now;
-            Public.Files.SetWriteToFile(file, JsonConvert.SerializeObject(data));
+            Public.Files.SetWriteToFile(file, JsonConvert.SerializeObject(data,Formatting.Indented));
         }
         /// <summary>
         /// 

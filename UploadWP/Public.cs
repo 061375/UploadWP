@@ -16,6 +16,7 @@ namespace UploadWP
     public class PersistData
     {
         public DateTime last_run = new DateTime();
+        public DateTime last_purged_orphaned = new DateTime();
         public Dictionary<string, Dates> pages = new Dictionary<string,Dates>();
         public Dictionary<string, Dates> files = new Dictionary<string, Dates>();
     }

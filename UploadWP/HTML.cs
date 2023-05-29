@@ -20,7 +20,8 @@ namespace UploadWP
         {
             ".php",
             ".xml",
-            ".txt"
+            ".txt",
+            "#"
         };
         public HTML(HtmlDocument doc, string data, List<string> _discard = null)
         {
