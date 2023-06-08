@@ -163,6 +163,38 @@ namespace UploadWP
             });
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetInnerHTML()
+        {
+            Public.Helpers.LogMethod();
+            return GetFiles("pre", new Dictionary<string, Attributes>()
+            {
+                {
+                    "innerhtml",new Attributes{
+                        
+                    }
+                }
+            });
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetStyles()
+        {
+            Public.Helpers.LogMethod();
+            return GetFiles("*", new Dictionary<string, Attributes>()
+            {
+                {
+                    "style",new Attributes{
+                    }
+                }
+            });
+        }
+
+        /// <summary>
         /// TODO
         /// </summary>
         /// <returns></returns>
@@ -185,6 +217,7 @@ namespace UploadWP
         public List<string> GetFiles(string tag, Dictionary<string, Attributes> attributes)
         {
             bool skip = false;
+            int i = 0;
             Public.Helpers.LogMethod();
             List<string> _return = new List<string>();
             if (doc.DocumentNode != null)
@@ -200,6 +233,15 @@ namespace UploadWP
                                                      && cmt.ParentNode != null
                                               select cmt)
                     {
+                        // just get the innerHTML then jump past everything
+                        if(attributes.ContainsKey("innerhtml"))
+                        {
+                            _return.Add(node.InnerHtml);
+                            node.InnerHtml = "[pre id=" + i.ToString() + "]";
+                            i++;
+                            Console.WriteLine("gathering innerHTML");
+                            continue;
+                        }
                         skip = false;
                         int match = 0;
                         string srctmp = String.Empty;
@@ -210,6 +252,11 @@ namespace UploadWP
                         {
                             if (attributes.ContainsKey(a.Name))
                             {
+                                if(a.Name == "style")
+                                {
+                                    _return.Add(a.Value);
+                                    continue;
+                                }
                                 match++;
                                 if (attributes[a.Name].issrc)
                                 {

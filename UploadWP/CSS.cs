@@ -55,7 +55,7 @@ namespace UploadWP
             foreach (Match match in matches)
             {
                 skip = false;
-                string src = match.Groups["url"].Value;
+                string src = match.Groups["url"].Value.Replace("'","").Trim();
                 // discard SVG and Base64, etc ...
                 if (src.IndexOf("data:image") > -1)
                     continue;

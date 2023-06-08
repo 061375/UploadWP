@@ -42,6 +42,23 @@ namespace UploadWP
             return file;
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="pres"></param>
+        /// <returns></returns>
+        public static StringBuilder GetReplacePre(StringBuilder file, List<string> pre)
+        {
+            int i = 0;
+            foreach(string s in pre)
+            {
+                string p = "[pre id=" + i + "]";
+                i++;
+                file = file.Replace(p, s);
+            }
+            return file;
+        }
+        /// <summary>
         /// originally intended to get the last time program was run the object allows any necessary persisted data
         /// </summary>
         /// <param name="file"></param>

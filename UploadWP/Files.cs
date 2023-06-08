@@ -55,10 +55,17 @@ namespace UploadWP
             _html.GetScripts();
             _html.GetVideo();
 
+            List<string> pre = _html.GetInnerHTML();
+
             // get all css
             List<string> stylesheets = _html.GetStylesheets();
             List<string> stylesheets2 = _html.GetInnerText("style");
+            List<string> stylesheets3 = _html.GetStyles();
             foreach (string stylesheet in stylesheets)
+            {
+                stylesheets2.Add(stylesheet);
+            }
+            foreach (string stylesheet in stylesheets3)
             {
                 stylesheets2.Add(stylesheet);
             }
@@ -71,6 +78,7 @@ namespace UploadWP
             // modifiy the cached file
             _return.text = Helpers.GetReplaceHardLinks(_return.text);
             _return.text = Helpers.GetMinifyHTML(_return.text);
+            _return.text = Helpers.GetReplacePre(_return.text, pre);
             //
             _return.path = Public.Files.GetFilePath(cache_path);
             _return.filename = Public.Files.GetFileName(cache_path);
