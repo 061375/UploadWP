@@ -13,7 +13,7 @@ The result is what looks like a Wordpress website that is totally HTML and very 
 
 It's affectively hack-proof ... as long as your server doesn't get hacked
 
-Really it's kind of like combining Wordpress and Dreamweaver. It was an idea I had years ago but only recently decided it would be a fun project to build.
+Really it's kind of like combining [Wordpress](https://wordpress.org/) and [Dreamweaver](https://www.adobe.com/products/dreamweaver.html). It was an idea I had years ago but only recently decided it would be a fun project to build.
 
 Jeremy Heminger <contact@jeremyheminger.com>
 
@@ -31,8 +31,8 @@ last update June 7, 2023
  
  dependency Renci.SSHNet
  
- - version 1.0.0.6
-     - **feature** now finds urls embeded in inline CSS
+ - version 1.0.06
+	 - **feature** now finds urls embeded in inline CSS
  - version 1.0.0.5
     - support for the `<pre>` tag without minification to maintain formatting
  - version 1.0.0.4
@@ -43,15 +43,14 @@ last update June 7, 2023
  
  - version 1.0.0.3
  
-      - **feature** digs through stylsheets to find assets
+	  - **feature** digs through stylsheets to find assets
   
  - version 1.0.0.2
  
-      - **bugfix** unwanted file types no longer uploaded
+	  - **bugfix** unwanted file types no longer uploaded
   
  - version 1.0.0.1
  
-      - **feature** delete removed pages
+	  - **feature** delete removed pages
   
  - version 1.0.0.0
- 
