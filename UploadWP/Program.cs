@@ -22,9 +22,15 @@ namespace UploadWP
          *        It's affectively hack-proof ... as long as your server doesn't get hacked
          * @author Jeremy Heminger <contact@jeremyheminger.com>
          * @date May 3, 2023
-         * @last_update May 29, 2023
+         * @last_update June 7, 2023
          * 
-         * 
+         *  
+             @bug     not automatically updating cache ( part of detect theme change * see below * )
+             @bug     seems to be skipping files occasionally 
+             @todo    connect to WP DB ( might be useful )
+             @todo    detect theme change
+ 
+
          * @dependency AQFiles 
          * @dependency AQHelpers 
          * @dependency HTMLAgiltyPack
@@ -89,7 +95,7 @@ namespace UploadWP
                 Console.WriteLine("______________________________");
                 Console.WriteLine("getting cached data ...");
                 Console.WriteLine("______________________________");
-
+                 
                 // get the last time this program was run
                 Public.PersistData = Helpers.GetPersistData(Constants.PersistData);
 

@@ -1,5 +1,3 @@
-
-
 # UploadWP
 Compresses and uploads the cached version of a Wordpress website
 
@@ -23,23 +21,6 @@ created May 3, 2023
 
 last update May 25, 2023
  
- - bug     still collecting php files and probably other unwanted extensions
- 
-   - looks like this is fixed but needs more testing
-
-   - turns out it was gathering CSS references
-          
- - bug     seems to be skipping files occasionally 
- 
- - todo    program needs to dig through stylesheets to find assets and ( maybe ) javascript - DONE CSS
- 
- - todo    connect to WP DB ( might be useful )
- 
- - todo    detect theme change
- 
- - todo    scan for uploaded orphaned files
- 
- 
  dependency AQFiles 
  
  dependency AQHelpers 
@@ -50,6 +31,10 @@ last update May 25, 2023
  
  dependency Renci.SSHNet
  
+ - version 1.0.0.6
+     - **feature** now finds urls embeded in inline CSS
+ - version 1.0.0.5
+    - support for the `<pre>` tag without minification to maintain formatting
  - version 1.0.0.4
 
     - **feature** clear orphaned files
@@ -58,15 +43,15 @@ last update May 25, 2023
  
  - version 1.0.0.3
  
-    - **feature** digs through stylsheets to find assets
+      - **feature** digs through stylsheets to find assets
   
  - version 1.0.0.2
  
-    - **bugfix** unwanted file types no longer uploaded
+      - **bugfix** unwanted file types no longer uploaded
   
  - version 1.0.0.1
  
-    - **feature** delete removed pages
+      - **feature** delete removed pages
   
  - version 1.0.0.0
  
